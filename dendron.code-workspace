@@ -14,7 +14,8 @@
     "editor.snippetSuggestions": "inline",
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggest.showSnippets": true,
-    "editor.tabCompletion": "on"
+    "editor.tabCompletion": "on",
+    "insertDateString.formatDate": "DDDD MMMM D, YYYY",
   },
   "extensions": {
     "recommendations": [
