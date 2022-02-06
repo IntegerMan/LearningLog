@@ -2,7 +2,7 @@
 id: 15jBeenX3nLneuaiNJXY4
 title: '2022-02-05'
 desc: ''
-updated: 1644123789555
+updated: 1644124189692
 created: 1644113862679
 traitIds:
   - journalNote
@@ -10,11 +10,14 @@ traitIds:
 
 # Saturday February 5, 2022
 
+Restful day. Slept in, spent time watching YouTube, Church (masked), reading, and prepping for [[courses.fu]] by going over [[courses.fu.comp630]] syllabus.
+
 **Learning**
 
 - Started [[books.database.databaseinternals]]
 - Completed [[courses.learn.databricks.user-definedfunctions]]
 - Completed [[courses.learn.querydeltalake]]
+- Completed Homework Assignment: "Introduce Yourself" for [[courses.fu.comp630]]
   
 **Productivity**
 
