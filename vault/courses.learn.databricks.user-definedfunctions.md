@@ -2,13 +2,13 @@
 id: bMOyoNtbjZ2cn4RRAmp0W
 title: Work with user-defined Functions
 desc: ''
-updated: 1644120469853
+updated: 1644120616119
 created: 1644118096680
 ---
 
 Part of the [[azure.certs.datascientist]] study path
 
-Related to [[notebooks.databricks.azure]]
+Related to [[azure.databricks]]
 
 > [Notes from MS Learn Course](https://docs.microsoft.com/en-us/learn/modules/work-with-user-defined-functions/)
 
@@ -71,5 +71,3 @@ def vectorizedUDF(name):
 ```
 
 Moral of the story: `@pandas_udf` > `@udf`
-
-## ETL
