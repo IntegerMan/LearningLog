@@ -2,15 +2,17 @@
 id: bMOyoNtbjZ2cn4RRAmp0W
 title: Work with user-defined Functions
 desc: ''
-updated: 1644120280647
+updated: 1644120469853
 created: 1644118096680
 ---
+
+Part of the [[azure.certs.datascientist]] study path
 
 Related to [[notebooks.databricks.azure]]
 
 > [Notes from MS Learn Course](https://docs.microsoft.com/en-us/learn/modules/work-with-user-defined-functions/)
 
-User-defined functions are abbreviated as **UDF**
+User-defined functions are abbreviated as **UDF** and are conceptually similar to a [[libs.pandas]] `apply` function.
 
 ## Defining UDFs
 ```py
