@@ -2,7 +2,7 @@
 id: 15jBeenX3nLneuaiNJXY4
 title: '2022-02-05'
 desc: ''
-updated: 1644124189692
+updated: 1644202044780
 created: 1644113862679
 traitIds:
   - journalNote
@@ -23,4 +23,5 @@ Restful day. Slept in, spent time watching YouTube, Church (masked), reading, an
 
 - Started [[knowledgebase|root]]
 - Added initial items to [[extensions.vscode]]
-- Edited abstracts for [Stir Trek](https://StirTrek.com) conference
+- Edited abstracts for [[groups.stirtrek]] conference
+- [[groups.condg]] planning meeting. Now planned until August

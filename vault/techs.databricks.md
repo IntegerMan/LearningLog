@@ -2,7 +2,7 @@
 id: HBZWwtGnQN77tz3nndnf0
 title: Databricks
 desc: ''
-updated: 1644119184817
+updated: 1644202318100
 created: 1644118233367
 ---
 
@@ -10,3 +10,4 @@ Databricks are built upon [[techs.spark]] notebooks and provide advanced managem
 
 Databricks uses [[langs.scala]] under the hood
 
+You get the `display` function which has built in interactive charting and other features.
