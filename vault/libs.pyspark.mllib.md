@@ -2,7 +2,7 @@
 id: B6DOC7zvZktowZ2vTUECl
 title: Spark MLlib
 desc: ''
-updated: 1644206153900
+updated: 1644209589758
 created: 1644204121310
 ---
 
@@ -143,4 +143,44 @@ pipeline = Pipeline(stages=[
   encoder, 
   imputer
 ])
+```
+
+
+## Hyperparameters
+> Source: [[courses.learn.perform-model-selection-with-hyperparameter-tuning]]
+
+`explainParams()` on a Model will list the hyperparameters available for tuning
+
+`ParamGridBuilder` helps build a search grid of parameters:
+```py
+from pyspark.ml.tuning import ParamGridBuilder
+
+paramGrid = (ParamGridBuilder()
+  .addGrid(lr.maxIter, [1, 10, 100])
+  .addGrid(lr.fitIntercept, [True, False])
+  .addGrid(lr.standardization, [True, False])
+  .build()
+)
+```
+
+## Cross-validation
+> Source: [[courses.learn.perform-model-selection-with-hyperparameter-tuning]]
+See [[techs.kfold-validation]]
+
+```py
+from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.tuning import CrossValidator
+
+evaluator = RegressionEvaluator(
+  labelCol = "medv", 
+  predictionCol = "prediction"
+)
+
+cv = CrossValidator(
+  estimator = pipeline,             # Estimator (individual model or pipeline)
+  estimatorParamMaps = paramGrid,   # Grid of parameters to try (grid search)
+  evaluator=evaluator,              # Evaluator
+  numFolds = 3,                     # Set k to 3
+  seed = 42                         # Seed to sure our results are the same if ran again
+)
 ```
