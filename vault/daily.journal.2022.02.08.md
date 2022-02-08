@@ -1,0 +1,31 @@
+---
+id: Y1ed8G3keKinQzTAd7VM4
+title: '2022-02-08'
+desc: ''
+updated: 1644293595287
+created: 1644293330397
+traitIds:
+  - journalNote
+---
+
+## Tuesday February 8, 2022
+
+### Plan
+
+#### Work
+- Assist File Output Lecture
+- Regrades as needed
+- AF 1:1?
+- Lightning Talks
+- Start on Content for Conference Attendees
+
+#### Content
+- Come up with IBM Spreadsheet
+- ML.NET Sample Code for ESRB Talk
+- ML.NET plan for web application
+
+#### Learning
+- Investigate ML.NET Explainability
+- Check in on IBM course
+- Read more of [[books.database.databaseinternals]]
+- Look into .NET 6 simple ASP .NET web apps for ESRB Talk

@@ -9,6 +9,8 @@
     "editor.tabCompletion": "on",
     "cSpell.words": [
         "azureml",
+        "ESRB",
+        "Explainability",
         "Horovod",
         "keras",
         "webservice"
