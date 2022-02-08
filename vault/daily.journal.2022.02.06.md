@@ -2,13 +2,15 @@
 id: U5rbTG4ZqQaM0rTsSWJaA
 title: '2022-02-06'
 desc: ''
-updated: 1644209649188
+updated: 1644293138693
 created: 1644123966456
 traitIds:
   - journalNote
 ---
 
 ## Sunday February 6, 2022
+
+Restful day. Slept in (Saturday church / not teaching preschoolers) and watched a lot of YouTube let's play content to rest. Fun with dog. Snowed in.
 
 ### Plan
 
