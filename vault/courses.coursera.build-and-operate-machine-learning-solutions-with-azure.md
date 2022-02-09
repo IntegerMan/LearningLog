@@ -2,7 +2,7 @@
 id: v2yJoEnFhQ9dxSaDXv9B1
 title: Build and Operate Machine Learning Solutions with Azure
 desc: ''
-updated: 1644377678145
+updated: 1644382255733
 created: 1644374763417
 ---
 
@@ -398,4 +398,103 @@ hyperdrive = HyperDriveConfig(run_config=script_config,
 
 experiment = Experiment(workspace = ws, name = 'hyperdrive_training')
 hyperdrive_run = experiment.submit(config=hyperdrive)
+```
+
+### AutoML
+
+#### Getting Primary Metric Options
+
+```py
+from azureml.train.automl.utilities import get_primary_metrics
+
+get_primary_metrics('classification')
+```
+
+See https://aka.ms/AA70rrw for more details on primary metrics
+
+
+#### Submit an AutoML Run
+
+```py
+from azureml.train.automl import AutoMLConfig
+from azureml.core.experiment import Experiment
+
+# Set up the automated run
+automl_run_config = RunConfiguration(framework='python')
+automl_config = AutoMLConfig(name='Automated ML Experiment',
+                             task='classification',
+                             primary_metric = 'AUC_weighted',
+                             compute_target=aml_compute,
+                             training_data = train_dataset,
+                             validation_data = test_dataset, # optional
+                             label_column_name='Label',
+                             featurization='auto',
+                             iterations=12,
+                             max_concurrent_iterations=4)
+
+# Actually Run the experiment
+automl_experiment = Experiment(ws, 'automl_experiment')
+automl_run = automl_experiment.submit(automl_config)
+
+# Get information on the results
+best_run, fitted_model = automl_run.get_output()
+best_run_metrics = best_run.get_metrics()
+
+# Look at all metrics for the best run
+for metric_name in best_run_metrics:
+    metric = best_run_metrics[metric_name]
+    print(metric_name, metric)
+
+# View SciKit-Learn Pipeline Steps
+for step_ in fitted_model.named_steps:
+    print(step_)
+```
+
+Additional reading: How Automated ML Works: https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#how-automated-ml-works
+
+### Differential Privacy
+
+Higher epsilon is closer to unobscured values and more accurate, but individuals have less privacy through obfuscation
+
+Works via `SmartNoise` package.
+
+Additional reading on differential privacy: https://docs.microsoft.com/en-us/azure/machine-learning/concept-differential-privacy
+
+
+##### Explaining Models
+
+```py
+# Import Azure ML run library
+from azureml.core.run import Run
+from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
+from interpret.ext.blackbox import TabularExplainer
+# other imports as required
+
+# Get the experiment run context
+run = Run.get_context()
+
+# code to train model goes here
+
+# Get explanation
+explainer = TabularExplainer(model, X_train, features=features, classes=labels)
+explanation = explainer.explain_global(X_test)
+
+# Get an Explanation Client and upload the explanation
+explain_client = ExplanationClient.from_run(run)
+explain_client.upload_model_explanation(explanation, comment='Tabular Explanation')
+
+# Complete the run
+run.complete()
+```
+
+#### Viewing Explanations
+
+```py
+from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
+
+client = ExplanationClient.from_run_id(workspace=ws,
+                                       experiment_name=experiment.experiment_name, 
+                                       run_id=run.id)
+explanation = client.download_model_explanation()
+feature_importances = explanation.get_feature_importance_dict()
 ```
