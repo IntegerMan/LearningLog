@@ -2,7 +2,7 @@
 id: 53VzfWZMxq3GSfevfhoWM
 title: '2022-02-09'
 desc: ''
-updated: 1644381992165
+updated: 1644462799476
 created: 1644381836048
 traitIds:
   - journalNote
@@ -25,3 +25,9 @@ traitIds:
 
 #### Learning
 - Finish [[courses.coursera.build-and-operate-machine-learning-solutions-with-azure]]
+
+### Actual
+
+#### Learning
+- Finished [[courses.coursera.build-and-operate-machine-learning-solutions-with-azure]]
+- Finished some small C# / .NET MS Learn Modules (eval for students / hobbyists)
